@@ -18,7 +18,7 @@ class CartCard extends StatelessWidget {
   Widget build(BuildContext context) {
     cartController = Get.find<CartController>();
     return Container(
-      margin: EdgeInsets.all(5),
+      margin: const EdgeInsets.all(5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +28,7 @@ class CartCard extends StatelessWidget {
             width: 50,
             height: 80,
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Expanded(
@@ -38,9 +38,9 @@ class CartCard extends StatelessWidget {
               children: [
                 Text(
                   movieTicket.title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 ElevatedButton(
@@ -48,7 +48,7 @@ class CartCard extends StatelessWidget {
                       id: movieTicket.id,
                       title: movieTicket.title,
                       posterPath: movieTicket.posterPath),
-                  child: Text("Remove from Ticket"),
+                  child: const Text("Remove from Ticket"),
                 )
               ],
             ),
@@ -58,25 +58,26 @@ class CartCard extends StatelessWidget {
               GestureDetector(
                   onTap: () {
                     cartController.listMovieTicket.value[index].qty++;
+                     cartController.listMovieTicket.refresh();
                     Get.snackbar(
                       "Success",
                       "Success add to qty",
                       snackPosition: SnackPosition.BOTTOM,
                       isDismissible: true,
-                      duration: Duration(seconds: 1),
+                      duration: const Duration(seconds: 1),
                       backgroundColor: Colors.green,
                       colorText: Colors.white,
-                      margin: EdgeInsets.all(10),
-                      padding: EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                     );
                   },
-                  child: Icon(Icons.add)),
-              SizedBox(
+                  child: const Icon(Icons.add)),
+              const SizedBox(
                 height: 5,
               ),
               Obx(() => Text(
                   cartController.listMovieTicket.value[index].qty.toString())),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               GestureDetector(
@@ -86,11 +87,14 @@ class CartCard extends StatelessWidget {
                           id: movieTicket.id,
                           title: movieTicket.title,
                           posterPath: movieTicket.posterPath);
+
+                        cartController.listMovieTicket.refresh();
                     } else {
                       cartController.listMovieTicket.value[index].qty--;
+                       cartController.listMovieTicket.refresh();
                     }
                   },
-                  child: Icon(Icons.remove)),
+                  child: const Icon(Icons.remove)),
             ],
           )
         ],

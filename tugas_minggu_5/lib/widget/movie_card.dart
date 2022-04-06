@@ -23,7 +23,7 @@ class MovieCard extends StatelessWidget {
             width: 100,
             height: 150,
           ),
-          SizedBox(
+          const SizedBox(
             width: 5,
           ),
           Expanded(
@@ -33,13 +33,13 @@ class MovieCard extends StatelessWidget {
               children: [
                 Text(
                   movie.title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Text(movie.releaseDate),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Text(
@@ -52,7 +52,7 @@ class MovieCard extends StatelessWidget {
                       id: movie.id,
                       title: movie.title,
                       posterPath: movie.posterPath),
-                  child: Text("Add to Ticket"),
+                  child: const Text("Add to Ticket"),
                 )
               ],
             ),

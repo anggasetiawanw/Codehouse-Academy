@@ -12,7 +12,7 @@ class CartPage extends StatelessWidget {
     controller = Get.find<CartController>();
     return Scaffold(
         appBar: AppBar(
-          title: Text('Cart Page'),
+          title: const Text('Cart Page'),
         ),
         body: Obx(() => ListView.builder(
               itemCount: controller.listMovieTicket.value.length,
@@ -23,7 +23,7 @@ class CartPage extends StatelessWidget {
                     index: index,
                   );
                 } else {
-                  return Center(child: Text("TIKET BELUM DI PESAN"));
+                  return const Center(child: Text("TIKET BELUM DI PESAN"));
                 }
               },
             )));

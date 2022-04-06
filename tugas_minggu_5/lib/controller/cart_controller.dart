@@ -15,11 +15,11 @@ class CartController extends GetxController {
       "Success add to cart",
       snackPosition: SnackPosition.BOTTOM,
       isDismissible: true,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       backgroundColor: Colors.green,
       colorText: Colors.white,
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
     );
     print(listMovieTicket.length);
     update();
@@ -31,11 +31,11 @@ class CartController extends GetxController {
       "Success remove from cart",
       snackPosition: SnackPosition.BOTTOM,
       isDismissible: true,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       backgroundColor: Colors.green,
       colorText: Colors.white,
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
     );
     print(listMovieTicket.length);
     update();

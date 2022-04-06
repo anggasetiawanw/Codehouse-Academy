@@ -12,13 +12,13 @@ class HomePage extends StatelessWidget {
     controller = Get.find<HomeController>();
     return Scaffold(
       appBar: AppBar(
-        title: Text("List Movie For Booking"),
+        title: const Text("List Movie For Booking"),
       ),
       body: Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Obx(
             () => controller.listMovie.isEmpty
-                ? Center(child: CircularProgressIndicator())
+                ? const Center(child: CircularProgressIndicator())
                 : NotificationListener<ScrollNotification>(
                     onNotification: (ScrollNotification scrollNotification) {
                       if (scrollNotification.metrics.pixels ==
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
                             return MovieCard(
                                 movie: controller.listMovie.value[index]);
                           } else {
-                            return Center(child: CircularProgressIndicator());
+                            return const Center(child: CircularProgressIndicator());
                           }
                         }),
                   ),
